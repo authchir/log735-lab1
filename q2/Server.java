@@ -17,9 +17,9 @@ public class Server {
 					
 				// Managing the new client socket in a thread from the thread pool
 				threadPool.execute(() -> {
-					System.out.println("Connexion réussie");
-					System.out.println("Attente de l'entrée...");
-					
+					System.out.println("Connexion rÃ©ussie");
+					System.out.println("Attente de l'entrÃ©e...");
+
 					// Try with resources to automatically manage the streams' resources
 					try (PrintWriter out = new PrintWriter(client.getOutputStream(), true);
 						 BufferedReader in = new BufferedReader(new InputStreamReader(client.getInputStream()));) {
@@ -35,19 +35,21 @@ public class Server {
 				        	out.println(line.toUpperCase());
 				        }
 					} catch (IOException e) {
-						e.printStackTrace();
+						System.err.println("Error reading from streams.");
+						System.exit(2);
 					} finally {
 						try {
 							client.close();
 						} catch (Exception e) {
-							e.printStackTrace();
+							System.err.println("Error closing socket.");
+							System.exit(3);
 						}
 					}
 				});
         	}
 		}
 		catch (IOException e) { 
-			System.err.println("Accept a échoué."); 
+			System.err.println("Could not listen on port.");
 			System.exit(1); 
         } 	
 	} 
