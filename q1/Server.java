@@ -12,7 +12,7 @@ public class Server {
         } 
 		catch (IOException e) 
         { 
-			System.err.println("On ne peut pas écouter au  port: 10118."); 
+			System.err.println("On ne peut pas Ã©couter au  port: 10118."); 
 			System.exit(1); 
         } 
 
@@ -24,12 +24,12 @@ public class Server {
         } 
 		catch (IOException e) 
         { 
-			System.err.println("Accept a échoué."); 
+			System.err.println("Accept a Ã©chouÃ©."); 
 			System.exit(1); 
         } 
 
-		System.out.println ("connexion réussie");
-		System.out.println ("Attente de l'entrée.....");
+		System.out.println ("connexion rÃ©ussie");
+		System.out.println ("Attente de l'entrÃ©e.....");
 
 		PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true); 
 		BufferedReader in = new BufferedReader(new InputStreamReader( clientSocket.getInputStream())); 
