@@ -26,7 +26,7 @@ public class Server {
 						String line;
 
 						while ((line = in.readLine()) != null) {
-							System.out.printf("Serveur: '%s'\n", line);
+							System.out.printf("Server: '%s'\n", line);
 							
 				        	if (line.equals("Bye.")) {
 				        		break;
