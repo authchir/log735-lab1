@@ -1,0 +1,8 @@
+La fonction main du client a été modifiée afin de corriger le défaut qui
+l'empêchait de se terminer lorsque la connexion avec le serveur était
+interrompue (e.g. avec la commande "Bye.").
+
+La fonction main du serveur a été modifiée afin que la connexion de plusieurs
+clients soit acceptée dans une boucle infinie. Chaque fois qu'un client se
+connecte, une nouvelle tâche est ajoutée dans un thread pool afin de traiter la
+demande de ce client.
