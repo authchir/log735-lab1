@@ -1,4 +1,4 @@
-package q3;
+package q6;
 
 import java.io.*;
 import java.net.*;

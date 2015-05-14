@@ -63,7 +63,7 @@ public class Client {
 			} catch (IOException e) {
 				System.err.println("Could not connect.");
 			} finally {
-				++failover;
+				++failover; // Use next available server.
 			}
 		}
 		
