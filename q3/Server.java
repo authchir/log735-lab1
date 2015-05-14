@@ -1,6 +1,7 @@
 package q3;
 import java.net.*; 
 import java.io.*; 
+import java.util.Random;
 import java.util.concurrent.*;
 
 public class Server { 
@@ -8,8 +9,8 @@ public class Server {
 		// Creating a thread pool for the clients
 		ExecutorService threadPool = Executors.newCachedThreadPool();
 		
-		try (ServerSocket server = new ServerSocket(10118)) { 
-			System.out.println ("Server running. Waiting for clients...");
+		try (ServerSocket server = new ServerSocket(10119)) {
+			System.out.printf("Server running on port %d. Waiting for clients...\n", server.getLocalPort());
 
 			// Accepting new clients in main blocking loop
 			for (;;) {
@@ -32,17 +33,26 @@ public class Server {
 				        		break;
 				        	}
 				        	
+	        				Random rand = new Random();
+	        				int randomInt = rand.nextInt(5);
+
+	        				if (randomInt == 0) {
+		        				try {
+									Thread.sleep(5000);
+								} catch (Exception e) {
+									e.printStackTrace();
+								}
+	        				}
+				        	
 				        	out.println(line.toUpperCase());
 				        }
 					} catch (IOException e) {
 						System.err.println("Error reading from streams.");
-						System.exit(2);
 					} finally {
 						try {
 							client.close();
 						} catch (Exception e) {
 							System.err.println("Error closing socket.");
-							System.exit(3);
 						}
 					}
 				});
