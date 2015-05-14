@@ -1,0 +1,4 @@
+Tel qu'écrit, le serveur n'accepte la connexion que d'un seul client. Le premier
+à tenter de se connecter réussira probablement à établir la connexion et à
+utiliser le service du serveur. Les clients subséquents n'auront pas cette
+chance. Il n'y a aucune gestion du multithreading.
