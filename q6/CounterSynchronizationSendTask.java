@@ -9,9 +9,9 @@ import java.nio.ByteBuffer;
 public class CounterSynchronizationSendTask implements Runnable {
 	private final MulticastSocket socket;
 	private final int valueToSend;
+	private final int serverId;
 	private final InetAddress multicastAddress;
 	private final int multicastPort;
-	private final int serverId;
 	
 	public CounterSynchronizationSendTask(MulticastSocket socket, int valueToSend, int serverId, InetAddress multicastAddress, int multicastPort) {
 		this.socket = socket;

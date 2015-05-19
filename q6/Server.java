@@ -8,12 +8,12 @@ public class Server {
 	private static AtomicInteger counter = new AtomicInteger(0);					// Query counter
 	private static ExecutorService threadPool = Executors.newCachedThreadPool(); 	// Creating a thread pool for the clients
 	
-	private static final int serverId = 1;
+	private static final int serverId = 0;
 	private static final int serverPort = 10119;
 	
 	private static MulticastSocket syncSocket = null;								// UDP Socket for time synchronization
 	
-	private static final String multicastAddress = "239.0.0.1";
+	private static final String multicastAddress = "239.0.0.5";
 	private static final int multicastPort = 4446;
 	private static InetAddress multicastSyncGroup;
 	
@@ -25,7 +25,7 @@ public class Server {
 			syncSocket = new MulticastSocket(multicastPort);						// Opening sync socket
 			syncSocket.joinGroup(multicastSyncGroup);								// Join multicast group
 			
-			threadPool.execute(new CounterSynchronizationReceiveTask(syncSocket, serverId));	// Starting synchronization task
+			threadPool.execute(new CounterSynchronizationReceiveTask(syncSocket, serverId, multicastSyncGroup, multicastPort));	// Starting synchronization task
 			
 			// Accepting new clients in main blocking loop
 			for (;;) {
