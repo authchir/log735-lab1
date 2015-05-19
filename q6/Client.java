@@ -13,7 +13,7 @@ public class Client {
         System.out.println ("Trying to reach " + hostname + " on port " + port);
         
 		Socket socket = new Socket(hostname, port); // Connect to server
-		socket.setSoTimeout(10000); // Wait 10 seconds for accept or answer
+		socket.setSoTimeout(1000); // Wait 10 seconds for accept or answer
 
 		return socket;
 	}
@@ -63,7 +63,7 @@ public class Client {
 			} catch (IOException e) {
 				System.err.println("Could not connect.");
 			} finally {
-				++failover; // Use next available server.
+				failover = (failover + 1) % args.length; // Use next available server in loopy loop.
 			}
 		}
 		

@@ -25,7 +25,7 @@ public class EchoTask implements Runnable {
 			String line;
 
 			while ((line = in.readLine()) != null) {
-				int currentCount = Server.IncrementQueryCounter();
+				int currentCount = 0;
 				System.out.printf("Server: '%s'\n", line);
 				
 	        	if (line.equals("Bye.")) {
@@ -41,12 +41,15 @@ public class EchoTask implements Runnable {
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
+				} else {
+					currentCount = Server.IncrementQueryCounter();
 				}
 	        	
 	        	out.printf("#%d - %s\n", currentCount, line.toUpperCase());
 	        }
 		} catch (IOException e) {
 			System.err.println("Error reading from streams.");
+			e.printStackTrace();
 		} finally {
 			try {
 				this.client.close();
