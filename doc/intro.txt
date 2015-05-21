@@ -1,0 +1,8 @@
+Ce laboratoire consiste à apporter des améliorations successive à un système
+client-serveur de type ECHO en majuscule. D'un code de base où le serveur
+n'accepte qu'une connexion, nous ajoutons la possibilité à plusieurs clients de
+se connecter. Nous ajoutons ensuite une tolérence aux fautes en se connectant
+automatiquement à un autre serveur après dix secondes sans réponses. Nous
+ajoutons ensuite un compteur global du nombre de requêtes traité sur le serveur.
+Nous ajoutons ensuite une synchronisation entre les différents serveurs afin que
+le compteur soit partagé.
