@@ -1,0 +1,19 @@
+Deux concepts fondamentaux furent abordés dans ce laboratoire : la tolérence aux
+fautes ainsi que la synchronisation entre les systèmes.
+
+La tolérence aux fautes consiste à ce qu'un système soit capable de détecter
+qu'une faute à lieu et de prendre des actions correctives afin d'en diminuer
+l'impact. Dans ce cas-ci, dès lors qu'un serveur ne répondait pas pendant dix
+secondes, la connexion à celui-ci était abandonnée, un nouveau serveur était
+contacté et les opérations recommencaient là où elles avaient été laissé. Le
+tout se faisait sans intervention de l'utilisateur.
+
+Le synchronisation entre les systèmes consiste à ce que des informations
+importantes soient synchronisés. Dans ce cas-ci, il s'agissait du compteur
+global. La technique que nous avon choisi est de diffusé l'information à chaque
+fois qu'elle est modifiée. Une autre technique aurait pu être de la diffusé à
+toutes les x secondes.
+
+Dans l'éventualité où nous voudrions ajouter des serveurs de relève
+supplémentaires, il suffirait d'en informer les clients qui l'ajouteraient aux
+argument du programme.
