@@ -1,0 +1,5 @@
+La méthode « main » a été modifiée afin d'ouvrir un socket écoutant en multicast
+et de lancer une tâche en arrière plan (« CounterSynchronizationReceiveTask »)
+afin de mettre à jour le compteur. Chaque fois que le serveur traite une
+requête, une tâche de synchronisation (« CounterSynchronizationSendTask.java »)
+des autres serveurs est lancée.
