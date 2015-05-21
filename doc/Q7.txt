@@ -1,0 +1,20 @@
+Principalement, deux tâches de syncrhonisation ont été ajoutées:
+"CounterSynchronizationReceiveTask", qui se charge de recevoir les messsages des
+autres serveurs pour incrémenter le nombre de requêtes reçues et
+"CounterSynchronizationSendTask", qui a pour but d'envoyer aux autres serveurs
+le nombre actuel de requêtes lors de leur réception.
+
+La synchronisation s'effectue sur un socket UDP multicast entre les serveurs
+sur le même groupe. Un charge utile de 8 bytes est envoyée sur le socket lors de
+la réception d'une requête par un serveur. Les quatre premiers bytes identifient
+le serveur qui envoie le paquet et les quatre derniers contiennent le nombre de
+requêtes reçues. Le ou les serveurs qui reçoivent le paquet mettent à jour leur
+compteur local avec ce nombre.
+
+Des erreurs de synchronisation pourraient se produire, avec cette technique, si
+un paquet UDP ne se rend pas à destination. Ce problème pourrait être corrigé
+avec des protocoles plus élaborés qui gèrent la garantie de réception, par
+exemple. Aussi, bien que l'exercice ne le demande pas, si deux serveurs 
+reçoivent une requête d'un client avant de recevoir le message de 
+syncrhonisation avant l'envoi de leur réponse, une incrémentation pourrait être
+évitée et causer une faute.
