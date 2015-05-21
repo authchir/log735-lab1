@@ -21,11 +21,11 @@ il est trÃ¨s simple d'avoir accÃ¨s aux arguments du programme), la simplicitÃ©
 d'utilisation (i.e. il est trÃ¨s simple de fournir des arguments Ã  un exÃ©cutable) et
 l'extensibilitÃ© (i.e. un nombre arbitraire de serveurs peut Ãªtre fourni).
 
-De mettre les coordonnées en paramètre offre une certaine transparence d'accès, dans 
-le sens où un serveur local peut être accédé de la même manière qu'un serveur distant.
+De mettre les coordonnÃ©es en paramÃ¨tre offre une certaine transparence d'accÃ¨s, dans 
+le sens oÃ¹ un serveur local peut Ãªtre accÃ©dÃ© de la mÃªme maniÃ¨re qu'un serveur distant.
 De plus, ce choix a eu un grand impact sur la transparence de localisation: il est 
-nécessaire de connaître les adresses des services pour s'y connecter. Par contre, 
-notre choix n'a aucun impact sur la transparence de défaillance, de mobilité, 
-d'extensibilité ou de performance; qu les coordonnées soient dans le programmes ou 
-passées en argument, le programme demeure autant transparent d'une manière que de 
+nÃ©cessaire de connaÃ®tre les adresses des services pour s'y connecter. Par contre, 
+notre choix n'a aucun impact sur la transparence de dÃ©faillance, de mobilitÃ©, 
+d'extensibilitÃ© ou de performance; que les coordonnÃ©es soient dans le programmes ou 
+passÃ©es en argument, le programme demeure autant transparent d'une maniÃ¨re que de 
 l'autre. 
