@@ -1,0 +1,4 @@
+Un compteur atomique global a été ajouté à la fonction « main ». Le compteur
+sus-nommé est injecté dans les tâches et celles-ci l'utilisent afin d'afficher
+le nombre de requêtes total traitées par le serveur. Ceci est fait dans la
+méthode « EchoTask.run ».
