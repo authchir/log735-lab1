@@ -1,0 +1,22 @@
+Nous avons extrait le code responsable de se connecter au serveur dans une
+fonction « getSocket ». Celle-ci prend en argument les informations de connexion
+(i.e. adresse IP et numéro de port) et retourne un socket ouvert. Nous en
+profitons pour définir un minuteur de 10 secondes après lesquelles le socket
+lancera une exception « SocketTimeoutException ».
+
+Le code principal utilise cette fonction pour se connecter au premier serveur
+de la liste. Dans le cas où une exception de minuteur serait lancée, le code se
+connecte aux serveur suivant dans la liste et recommence là où il était rendu.
+Pour ce faire, nous avons dû placer l'instruction de l'utilisateur dans une
+variable afin de pouvoir poursuivre sur la même instruction en cas de changement
+de serveur.
+
+Le code principal a été placé dans une boucle qui continue tant que la tâche
+n'est pas terminée et qu'il reste des serveurs auxquels tenter de se connecter.
+
+La liste des serveurs est simplement passée au programme par les arguments de la
+fonctions « main » sous la forme « ip:port » (e.g. client 127.0.0.1:1234
+127.0.0.1:1234). Ce choix a été motivé par la simplicité d'implémentation (i.e.
+il est très simple d'avoir accès aux arguments du programme), la simplicité
+d'utilisation (i.e. il est très simple de fournir des arguments à un exécutable) et
+l'extensibilité (i.e. un nombre arbitraire de serveurs peut être fourni).
