@@ -20,3 +20,12 @@ fonctions Â«Â mainÂ Â» sous la forme Â« ip:port Â» (e.g. client 127.0.0.1:1234
 il est trÃ¨s simple d'avoir accÃ¨s aux arguments du programme), la simplicitÃ©
 d'utilisation (i.e. il est trÃ¨s simple de fournir des arguments Ã  un exÃ©cutable) et
 l'extensibilitÃ© (i.e. un nombre arbitraire de serveurs peut Ãªtre fourni).
+
+De mettre les coordonnées en paramètre offre une certaine transparence d'accès, dans 
+le sens où un serveur local peut être accédé de la même manière qu'un serveur distant.
+De plus, ce choix a eu un grand impact sur la transparence de localisation: il est 
+nécessaire de connaître les adresses des services pour s'y connecter. Par contre, 
+notre choix n'a aucun impact sur la transparence de défaillance, de mobilité, 
+d'extensibilité ou de performance; qu les coordonnées soient dans le programmes ou 
+passées en argument, le programme demeure autant transparent d'une manière que de 
+l'autre. 
