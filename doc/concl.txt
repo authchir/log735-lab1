@@ -1,0 +1,5 @@
+En conclusion, ce laboratoire nous a permi d'expérimenter avec les concepts de
+tolérence aux fautes et de synchronisation entre serveur. Nous avons démontré
+qu'il est relativement façile et rapide de mettre en place des implémentations
+simplistes de telles fonctionnalité. Cependant, des techniques plus avancées
+serait nécessaire afin de dépasser le stade de simple prototypes.
